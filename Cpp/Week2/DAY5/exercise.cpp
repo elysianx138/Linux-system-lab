@@ -1,13 +1,9 @@
 #include <iostream>
 
-void compare_num_max(int& max, int& num){
+void compare_num(int& num, int& max, int& min){
+    if(num<min) min = num;
     if(max<num) max = num;
 }
-
-void compare_num_min(int& min, int& num){
-    if(num<min) min = num;
-}
-
 void find_min_max(const int* arr, int& min, int& max, size_t t){
     if(arr == nullptr){
         std::cerr<<"数组不能为空"<<std::endl;
@@ -15,8 +11,7 @@ void find_min_max(const int* arr, int& min, int& max, size_t t){
     }
     for(size_t p = 0;p < t;p++){
         int num = *(arr + p);
-        compare_num_max(max, num);
-        compare_num_min(min, num);
+        compare_num(num, max, min);
     }
 }
 

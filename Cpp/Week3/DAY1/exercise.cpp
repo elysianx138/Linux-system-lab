@@ -9,7 +9,7 @@ private:
     double radius_;
 
 public:
-    Circle(double radius) : radius_(radius){
+    Circle(const double& radius) : radius_(radius){
         std::cout<<radius_<<"的圆构造成功"<<std::endl;
     } 
     double get_radius() const {
